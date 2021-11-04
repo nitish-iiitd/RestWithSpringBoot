@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>be RESTful</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {
+            font-size: 20px;
+            letter-spacing: 0.7px;
+        }
+        .margin {margin-bottom: 25px;}
+        .bg-green {
+            background-color: #1abc9c; /* Green */
+            color: #ffffff;
+        }
+        .bg-darkblue {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-white {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .bg-darkgray {
+            background-color: #2f2f2f; /* Black Gray */
+            color: #fff;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .content-container {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .content-container-main {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .content-container-alert {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">be RESTful</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/swagger-ui.html">API DOC</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron bg-darkblue text-center">
+    <h1>be RESTful</h1>
+    <p>Learn core concepts behind REST by exploring through an example and be RESTful.</p>
+</div>
+
+<div class="container content-container-main bg-white">
+    <p>The main aim of this web service is to provide you a methodological approach to learn the principles of REST.
+        The focus is not on explaining the theoretical concepts of REST but actually interacting with a RESTful service as a client.
+    However, it would be useful if you have some idea of REST beforehand.
+        <br><br>
+        Let us just quickly brush-up some concepts in a simple way.</p>
+</div>
+
+<div class="container content-container-alert bg-white">
+    <div class="alert alert-info" role="alert">
+        <strong>Hey!</strong> This article might not be perfect. I am sharing whatever I have learned about REST from my study and experience.
+        If you have any suggestions or feedback, please write to me at nitish2794@gmail.com
+    </div>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">What is REST ?</h3>
+    <p>REST is an architectural style to design an interface for client-server communication.</p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Core Guidelines</h3>
+    <p>There are two core guiding principles behind RESTful thinking.</p>
+    <p>
+        1. Design APIs around resources
+        <br>
+        2. Provide links to navigate the service
+    </p>
+    <p>Please note that here, we are not talking about the six constraints of REST as defined by Roy Fielding.
+        We are focusing on the intent behind REST style.</p>
+</div>
+
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">What does "REST" mean?</h3>
+    <p>We know that REST stands for Representational State Transfer but what does that really mean ?</p>
+    <p>It simply means that the server transfers a representation of the state of a resource to the client.</p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">REST != HTTP</h3>
+    <p>Learn this by heart. REST does not necessarily mean APIs over HTTP. Its just that it is easier to implement REST style with HTTP.</p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">How much RESTful?</h3>
+    <p>Leonard Richardson has created one model, named as Richardson Maturity Model (RMM), to measure the RESTfulness of your service. <br>
+        This model has defined four levels of RESTfulness, from level 0 to level 3. Level 3 meaning the highest level of RESTfulness.
+        <br>One important thing to note here is that this model works for only those services which are using HTTP for communication.</p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">RMM Levels</h3>
+    <p>Level 0 - Single URI over HTTP</p>
+    <p>Level 1 - Resource URIs</p>
+    <p>Level 2 - Resource URIs + HTTP verbs</p>
+    <p>Level 3 - Resource URIs + HTTP verbs + Hypermedia</p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Example Service</h3>
+    <p>This service on which you are reading this article, itself has exposed some APIs over HTTP.</p>
+    <p>It contains one resource namely, Employee, on which we can perform CRUD operations through the exposed APIs.
+    The other resource is Order which we will look at a later point.</p>
+    <p>RMM might not be the best model to measure the RESTfulness but it surely is a good model to understand the concepts behind REST in a progressive manner.
+    Keeping that in mind, this service exposes APIs according to each level of the RMM model</p>
+    <p>You can checkout the APIs and how they are becoming more and more RESTful as you go ahead to higher levels.</p>
+    <a class="btn btn-primary btn-lg" href="/swagger-ui.html" role="button">API Documentation</a>
+
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-darkgray text-center">
+    <p>Developed By <a href="http://www.srivastavanitish.com">Nitish Srivastava</a></p>
+</footer>
+
+</body>
+</html>
