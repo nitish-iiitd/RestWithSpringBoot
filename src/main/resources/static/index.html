@@ -16,7 +16,16 @@
         }
         p {
             font-size: 20px;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.6px;
+            word-spacing: 4px;
+        }
+        .mid-notices{
+            font-size: 15px;
+            word-spacing: 3px;
+            letter-spacing: 0.4px;
+        }
+        .imp-term{
+            font-weight: 900;
         }
         .margin {margin-bottom: 25px;}
         .bg-green {
@@ -40,12 +49,12 @@
             padding-bottom: 70px;
         }
         .content-container {
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         .content-container-main {
             padding-top: 70px;
-            padding-bottom: 70px;
+            padding-bottom: 20px;
         }
         .content-container-alert {
             padding-top: 20px;
@@ -62,6 +71,31 @@
         }
         .navbar-nav  li a:hover {
             color: #1abc9c !important;
+        }
+
+        /* Very Small devices (landscape phones, 544px and up) */
+        @media (min-width: 100px) {
+            p {font-size:14px;} /*1rem = 16px*/
+        }
+
+        /* Small devices (landscape phones, 544px and up) */
+        @media (min-width: 544px) {
+            p {font-size:16px;} /*1rem = 16px*/
+        }
+
+        /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+        @media (min-width: 768px) {
+            p {font-size:18px;} /*1rem = 16px*/
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            p {font-size:19px;} /*1rem = 16px*/
+        }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            p {font-size:20px;} /*1rem = 16px*/
         }
     </style>
 </head>
@@ -83,7 +117,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/swagger-ui.html">API DOC</a></li>
+                <li><a href="/swagger-ui.html">Explore APIs</a></li>
             </ul>
         </div>
     </div>
@@ -95,82 +129,228 @@
 </div>
 
 <div class="container content-container-main bg-white">
-    <p>The main aim of this web service is to provide you a methodological approach to learn the principles of REST.
+    <p class="text-justify">The aim of this web service is to provide you a methodological approach to learn the principles of REST.
         The focus is not on explaining the theoretical concepts of REST but actually interacting with a RESTful service as a client.
-    However, it would be useful if you have some idea of REST beforehand.
+    Hence, it would be useful if you have some idea of REST beforehand.
         <br><br>
-        Let us just quickly brush-up some concepts in a simple way.</p>
+        Please go through the below articles if you are a little bit rusty on REST theoretical concepts.<br>
+        <a href="https://restfulapi.net/" target="_blank">REST Basics</a><br>
+        <a href="https://restfulapi.net/rest-architectural-constraints/" target="_blank">REST Architectural Constraints</a>
+        <br><br>
+        </p>
 </div>
 
 <div class="container content-container-alert bg-white">
     <div class="alert alert-info" role="alert">
-        <strong>Hey!</strong> This article might not be perfect. I am sharing whatever I have learned about REST from my study and experience.
-        If you have any suggestions or feedback, please write to me at nitish2794@gmail.com
+        <p class="text-justify mid-notices"><strong>Hey!</strong> This article might not be perfect.
+            If you have any suggestions or feedback, please write to me at nitish2794@gmail.com</p>
     </div>
+</div>
+
+<div class="container content-container bg-white">
+    <p class="text-justify">
+        Assuming that we have got some knowledge of REST now, let us just quickly brush-up some concepts in a simple way.</p>
 </div>
 
 <div class="container content-container bg-white ">
     <h3 class="margin">What is REST ?</h3>
-    <p>REST is an architectural style to design an interface for client-server communication.</p>
+    <p class="text-justify">REST is an architectural style to design an interface for client-server communication.</p>
 </div>
 
 <div class="container content-container bg-white ">
     <h3 class="margin">Core Guidelines</h3>
-    <p>There are two core guiding principles behind RESTful thinking.</p>
-    <p>
+    <p class="text-justify">There are two core guidelines behind RESTful thinking.</p>
+    <p class="text-justify">
         1. Design APIs around resources
         <br>
         2. Provide links to navigate the service
     </p>
-    <p>Please note that here, we are not talking about the six constraints of REST as defined by Roy Fielding.
+    <p class="text-justify">Please note that here, we are not talking about the six constraints of REST as defined by Roy Fielding.
         We are focusing on the intent behind REST style.</p>
 </div>
 
 
 <div class="container content-container bg-white ">
     <h3 class="margin">What does "REST" mean?</h3>
-    <p>We know that REST stands for Representational State Transfer but what does that really mean ?</p>
-    <p>It simply means that the server transfers a representation of the state of a resource to the client.</p>
+    <p class="text-justify">We know that REST stands for <b class="imp-term">REpresentational State Transfer</b> but what does that really mean ?</p>
+    <p class="text-justify">It simply means that the server transfers a representation of the state of a resource to the client.</p>
 </div>
 
 <div class="container content-container bg-white ">
     <h3 class="margin">REST != HTTP</h3>
-    <p>Learn this by heart. REST does not necessarily mean APIs over HTTP. Its just that it is easier to implement REST style with HTTP.</p>
+    <p class="text-justify">Learn this by heart! REST does not necessarily mean APIs over HTTP. Its just that it is easier to implement REST style with HTTP.</p>
 </div>
 
 <div class="container content-container bg-white ">
-    <h3 class="margin">How much RESTful?</h3>
-    <p>Leonard Richardson has created one model, named as Richardson Maturity Model (RMM), to measure the RESTfulness of your service. <br>
+    <h3 class="margin">Measuring RESTfulness</h3>
+    <p class="text-justify">Leonard Richardson has created one model, named as Richardson Maturity Model (RMM), to measure the RESTfulness of a service.
         This model has defined four levels of RESTfulness, from level 0 to level 3. Level 3 meaning the highest level of RESTfulness.
         <br>One important thing to note here is that this model works for only those services which are using HTTP for communication.</p>
 </div>
 
 <div class="container content-container bg-white ">
     <h3 class="margin">RMM Levels</h3>
+    <p>To learn about the levels of RMM model, you can read the article :
+        <a href="https://restfulapi.net/richardson-maturity-model/" target="_blank">Richardson Maturity Model</a>.
+    </p>
+    <p>Below is the summarized version of the levels as defined by RMM.</p>
     <p>Level 0 - Single URI over HTTP</p>
     <p>Level 1 - Resource URIs</p>
     <p>Level 2 - Resource URIs + HTTP verbs</p>
     <p>Level 3 - Resource URIs + HTTP verbs + Hypermedia</p>
+    <br>
+    <p class="text-justify">Please note that level 3 (highest level) of RMM talks about the use of hypermedia
+        however it actually is one of the core guidelines of REST i.e usage of hypermedia is a <b class="imp-term">pre-condition</b> to REST.</p>
+    <p class="text-justify">
+        RMM might not be the best model to measure the RESTfulness
+        but it surely is a good model to understand the concepts behind REST in a progressive manner.
+        Keeping that in mind, this service exposes APIs according to each level of the RMM model.
+        <br><br>
+        Let us now start with our objective of this article i.e explore an example which would help us learn REST in a practical way.
+    </p>
 </div>
 
 <div class="container content-container bg-white ">
-    <h3 class="margin">Example Service</h3>
-    <p>This service on which you are reading this article, itself has exposed some APIs over HTTP.</p>
-    <p>It contains one resource namely, Employee, on which we can perform CRUD operations through the exposed APIs.
-    The other resource is Order which we will look at a later point.</p>
-    <p>RMM might not be the best model to measure the RESTfulness but it surely is a good model to understand the concepts behind REST in a progressive manner.
-    Keeping that in mind, this service exposes APIs according to each level of the RMM model</p>
-    <p>You can checkout the APIs and how they are becoming more and more RESTful as you go ahead to higher levels.</p>
-    <a class="btn btn-primary btn-lg" href="/swagger-ui.html" role="button">API Documentation</a>
+    <h3 class="margin">Introduction to our Example Service</h3>
+    <p class="text-justify">
+        This web service on which you are reading this article, has exposed some APIs over HTTP.
+        <br><br>
+        It contains two resources:<br>
+        1. Employee<br>
+        2. Order
+        <br><br>
+        We can perform CRUD (Create, Read, Update and Delete) operations on these two resources through the exposed APIs.
+        We will use Employee resource for exploring about the first 3 levels i.e level 0 to level 2 and
+        both the resources for the last level i.e level 3.
+        <br><br>
+        This service uses Swagger for documenting the exposed APIs.
+        Please click the button below to go to the API documentation.
+        The APIs are categorized according to the resource and the RMM level.
 
+    </p>
+    <br>
+    <a class="btn btn-primary btn-lg justify-center" href="/swagger-ui.html" role="button">Explore Swagger API Documentation</a>
+    <br><br>
+    <p class="text-justify">
+        Next, we would see how these APIs are becoming more and more RESTful as we gradually proceed to higher levels.
+    </p>
 </div>
 
+<div class="container content-container-alert bg-white">
+    <div class="alert alert-info" role="alert">
+        <p class="text-justify mid-notices">This example is inspired from the spring.io article : <a href="https://spring.io/guides/tutorials/rest/">Building REST services with Spring</a> </p>
+    </div>
+</div>
+
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Level 0 APIs</h3>
+    <p class="text-justify">
+        Level 0 states that a single URI would be exposed via HTTP.
+        Because the URI is same, we need to send all the information (i.e action and data) in the payload of the URI.
+        In our example, we have exposed a single endpoint <i>/employeeService</i>
+        and we send the action and the required data in the payload of the HTTP request.
+        <br><br>
+        The available actions are : <br>
+        1. <i>create</i> for creating a employee<br>
+        2. <i>readAll</i> for retrieving all the employees<br>
+        3. <i>read</i> for retrieving one employee given the employee id in the payload<br>
+        4. <i>update</i> for updating an employee<br>
+        5. <i>delete</i> for deleting an employee<br>
+        <br>
+        Checkout the Level 0 APIs in the swagger documentation for further API details.
+    </p>
+</div>
+
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Level 1 APIs</h3>
+    <p class="text-justify">
+        Level 1 states that the service should have URIs according to the resources in the system.
+        Here, we have designed our API denoting the resource i.e <i>/employee</i> (unlike <i>/employeeService</i>)
+        with different endpoints for different actions of the resource.
+        We have added the action name to the endpoint <i>/employee</i>,
+        hence, we only need to send the required data in the payload of the HTTP request of that particular action.
+        <br><br>
+        Checkout the Level 1 APIs in the swagger documentation for further API details.
+    </p>
+</div>
+
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Level 2 APIs</h3>
+    <p class="text-justify">
+        Level 2 states that the service should have URIs according to the resources in the system
+        and in addition to that it should be utilising HTTP verbs for denoting the corresponding actions on that resource.
+        <br>
+        For example, use HTTP GET for reading the data, HTTP POST for creating new data, etc.
+        Here, we have designed our API denoting the resource i.e <i>/employee</i>
+        with different endpoints using appropriate HTTP verb for the actions of the resource.
+        Here, we don't need to add any action name to the /employee endpoint as we are utilising HTTP verbs for that.
+        <br><br>
+        Checkout the Level 2 APIs in the swagger documentation for further API details.
+    </p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Level 3 APIs</h3>
+    <p class="text-justify">
+        Level 3 states that the service should be following all the requirements of level 2 and in addition to that,
+        it should provide hypermedia in the API response using which the client can navigate the service further.
+        This is termed as HATEOAS (read more <a href="https://restfulapi.net/hateoas/">here</a>) and is one of the core requirements for a RESTful service.
+        <br><br>
+        HATEOAS simply says that if you are providing some resource state to a client, then you need to also provide some
+        additional links which should tell the client how to perform other valid actions related to that resource.
+        <br><br>
+        In our example, we have two resources to demonstrate the HATEOAS feature.
+        <br><br>
+        First, let us go through the Employee resource. If we try to do any operation on the employee resource, we would see
+        a more heavy response containing some additional links.
+        For example, reading one employee would also provide us a link to read all the employees.
+        <br><br>
+        Now, coming to the second resource i.e Order. Order resource has a property called State.
+        Every order would be having any one state out of these three states : IN_PROGRESS, COMPLETED and CANCELLED.
+        <br>
+        -> The order with IN_PROGRESS state can either be cancelled or completed i.e can either go to CANCELLED or COMPLETED state.
+        <br>
+        -> The order with CANCELLED or COMPLETED state cannot go to any other state.
+        <br><br>
+        Check out the read API call response for an order with IN_PROGRESS state. We find that we get some links in the response.
+        We would be getting 4 links in the response out of which two links give us the two valid action URIs which we can perform on this particular order.
+        However, if we try out the read API call for an order with CANCELLED or COMPLETED state, we won't get any links for cancel and complete action.
+        This variation in response tells the client about the valid actions that can be performed on a particular order resource.
+        <br><br>
+        One important thing to note here is that due to the above feature, client does not need to store server-side logic of invalid or valid actions.
+        It depends on the response given by the server. For example, in future, if server decides to allow completion of a cancelled order,
+        then the client does not have to change anything on its side as everything would be handled dynamically whenever the response changes from the server,
+        provided the client has written its logic in such a way.
+
+
+        <br><br>
+        Checkout the Level 3 APIs in the swagger documentation for further API details.
+    </p>
+</div>
+
+<div class="container content-container bg-white ">
+    <h3 class="margin">Conclusion</h3>
+    <p class="text-justify">
+        Congratulations on completing this tutorial! Hopefully, you would have gained some practical exposure of REST and its intent.
+        You can read the external articles mentioned above at various points, if not done yet. That would definitely increase your understanding of REST.
+        You can also create new resources and play with them using Swagger Documentation.
+        <br><br>
+        Thanks :)
+        <br>
+        <br>
+    </p>
+</div>
+
+<br><br><br>
 
 
 
 <!-- Footer -->
 <footer class="container-fluid bg-darkgray text-center">
-    <p>Developed By <a href="http://www.srivastavanitish.com">Nitish Srivastava</a></p>
+    <p>Developed By <a href="https://www.linkedin.com/in/nitish-srivastava-353a61129/">Nitish Srivastava</a></p>
 </footer>
 
 </body>

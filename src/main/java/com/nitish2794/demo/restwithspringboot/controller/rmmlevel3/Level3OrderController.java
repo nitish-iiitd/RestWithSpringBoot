@@ -5,6 +5,8 @@ import com.nitish2794.demo.restwithspringboot.entity.Order;
 import com.nitish2794.demo.restwithspringboot.enums.Status;
 import com.nitish2794.demo.restwithspringboot.exception.OrderNotFoundException;
 import com.nitish2794.demo.restwithspringboot.repository.OrderRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.MediaTypes;
@@ -22,6 +24,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/rmm-level3")
+@Tag(name="RMM Level 3 Order Resource APIs")
 public class Level3OrderController {
 
     private final OrderRepository orderRepository;
@@ -34,6 +37,7 @@ public class Level3OrderController {
     }
 
     @GetMapping("/orders")
+    @Operation(summary="Get all the Orders")
     public CollectionModel<EntityModel<Order>> all() {
 
         List<EntityModel<Order>> orders = orderRepository.findAll().stream() //
@@ -45,6 +49,7 @@ public class Level3OrderController {
     }
 
     @GetMapping("/orders/{id}")
+    @Operation(summary="Get an Order")
     public EntityModel<Order> one(@PathVariable Long id) {
 
         Order order = orderRepository.findById(id) //
@@ -54,6 +59,7 @@ public class Level3OrderController {
     }
 
     @PostMapping("/orders")
+    @Operation(summary="Create an Order")
     ResponseEntity<EntityModel<Order>> newOrder(@RequestBody Order order) {
 
         order.setStatus(Status.IN_PROGRESS);
@@ -65,6 +71,7 @@ public class Level3OrderController {
     }
 
     @DeleteMapping("/orders/{id}/cancel")
+    @Operation(summary="Cancel an Order")
     public ResponseEntity<?> cancel(@PathVariable Long id) {
 
         Order order = orderRepository.findById(id) //
@@ -84,6 +91,7 @@ public class Level3OrderController {
     }
 
     @PutMapping("/orders/{id}/complete")
+    @Operation(summary="Complete an Order")
     public ResponseEntity<?> complete(@PathVariable Long id) {
 
         Order order = orderRepository.findById(id) //

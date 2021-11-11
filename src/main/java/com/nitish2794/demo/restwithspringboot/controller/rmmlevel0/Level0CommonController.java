@@ -4,10 +4,13 @@ import com.nitish2794.demo.restwithspringboot.entity.Employee;
 import com.nitish2794.demo.restwithspringboot.exception.ActionInvalidException;
 import com.nitish2794.demo.restwithspringboot.exception.EmployeeNotFoundException;
 import com.nitish2794.demo.restwithspringboot.repository.EmployeeRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/rmm-level0")
+@Tag(name="RMM Level 0 Employee Resource APIs")
 public class Level0CommonController {
 
     private final EmployeeRepository employeeRepository;
@@ -17,6 +20,7 @@ public class Level0CommonController {
     }
 
     @PostMapping("/employeeService")
+    @Operation(summary="Single URI for Employee Service")
     Object employeeService(@RequestBody EmployeeServiceRequest employeeServiceRequest) {
         String action = employeeServiceRequest.getAction();
         Employee employeeBody = employeeServiceRequest.getEmployee();
